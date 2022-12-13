@@ -164,8 +164,22 @@ namespace Interact
             }
         }
 
+        //Button MORE INFO
+        private void button3_Click(object sender, EventArgs e)
+        {
+            WebScrape find_inter = new WebScrape();
+            List<string> more_info = find_inter.Interaction(drugA, drugB);
+            if (more_info.Count != 0)
+            {
+                this.Size = new System.Drawing.Size(446, 538);
+                richTextBox1.Text = more_info[0];
+                richTextBox2.Text = more_info[1];
+            }
 
-       
+        }
+
+
+
 
         //Makes form movable without form border
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -197,22 +211,6 @@ namespace Interact
         }
 
 
-
-
-        //NOT IMPLEMENTED!!!
-        //Button MORE INFO
-        private void button3_Click(object sender, EventArgs e)
-        {
-            WebScrape find_inter = new WebScrape();
-            List<string> more_info = find_inter.Interaction(drugA, drugB);
-            if (more_info.Count != 0)
-            {
-                this.Size = new System.Drawing.Size(446, 538);
-                richTextBox1.Text= more_info[0];
-                richTextBox2.Text= more_info[1];
-            }
-            
-        }
 
 
         //UNUSED

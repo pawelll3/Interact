@@ -231,7 +231,6 @@
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.richTextBox1.Enabled = false;
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.richTextBox1.Location = new System.Drawing.Point(13, 62);
             this.richTextBox1.Name = "richTextBox1";
@@ -242,7 +241,6 @@
             // richTextBox2
             // 
             this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.richTextBox2.Enabled = false;
             this.richTextBox2.ForeColor = System.Drawing.SystemColors.Window;
             this.richTextBox2.Location = new System.Drawing.Point(209, 62);
             this.richTextBox2.Name = "richTextBox2";
