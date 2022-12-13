@@ -20,7 +20,7 @@ namespace Interact
            string[] result = {null,null,null};
 
            var col = db.GetCollection<DrugInter>("Master");
-           var inter_a = col.Find(x => x.drugA.Contains(drugA)).ToList();
+           var inter_a = col.Find(x => x.drugA == drugA).ToList();
 
             if (inter_a.Count != 0)
             {
@@ -36,7 +36,7 @@ namespace Interact
                 }
             }
 
-            var inter_b = col.Find(x => x.drugA.Contains(drugB)).ToList();
+            var inter_b = col.Find(x => x.drugA == drugB).ToList();
             if (inter_b.Count != 0)
             {
                 result[2] = "T";

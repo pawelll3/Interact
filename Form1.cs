@@ -50,7 +50,6 @@ namespace Interact
             System.Windows.Forms.Application.Exit();
         }
 
-        //NOT IMPLEMENTED YET
         //Autocompleting text
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
