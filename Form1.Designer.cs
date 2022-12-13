@@ -44,11 +44,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -217,36 +217,17 @@
             this.panel4.Size = new System.Drawing.Size(400, 191);
             this.panel4.TabIndex = 9;
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(84, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(219, 26);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "WEB-SEARCH RESULTS";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox1.Location = new System.Drawing.Point(13, 62);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(175, 103);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.richTextBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox2.Location = new System.Drawing.Point(209, 62);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(175, 103);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label8.Location = new System.Drawing.Point(250, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 19);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "MANAGEMENT";
             // 
             // label7
             // 
@@ -260,17 +241,36 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "INTERACTION";
             // 
-            // label8
+            // richTextBox2
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Black;
-            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Location = new System.Drawing.Point(250, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 19);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "MANAGEMENT";
+            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.richTextBox2.ForeColor = System.Drawing.SystemColors.Window;
+            this.richTextBox2.Location = new System.Drawing.Point(209, 62);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(175, 103);
+            this.richTextBox2.TabIndex = 3;
+            this.richTextBox2.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.richTextBox1.Location = new System.Drawing.Point(13, 62);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(175, 103);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(84, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(219, 26);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "WEB-SEARCH RESULTS";
             // 
             // Form1
             // 
@@ -288,6 +288,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
