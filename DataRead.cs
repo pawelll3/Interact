@@ -3,6 +3,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -51,6 +52,18 @@ namespace Interact
             }
             
             return result;
+        }
+
+        public string[] GetAutoComplete(char first_letter)
+        {
+            var col = db.GetCollection<DrugInterSorted>(Char.ToString(first_letter).ToUpper());
+            var data = col.FindAll().ToList();
+            List<string> result = new List<string>();
+            foreach (var item in data)
+            {
+                result.Add(item.drug);
+            }
+            return result.ToArray();
         }
 
         //Get result from database using sorted tables

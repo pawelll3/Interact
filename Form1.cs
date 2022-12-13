@@ -28,6 +28,9 @@ namespace Interact
         //Variable for tracking clicks on textBox1
         bool hasBeenClicked = false;
 
+        //Variable storing source for text autocompletion for textBox1
+        AutoCompleteStringCollection source = new AutoCompleteStringCollection();
+
 
         public Form1()
         {
@@ -51,7 +54,14 @@ namespace Interact
         //Autocompleting text
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if ((!String.IsNullOrEmpty(textBox1.Text)) && textBox1.Text.Length == 1)
+            {
+                source.AddRange(read.GetAutoComplete(textBox1.Text[0]));
 
+                textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                textBox1.AutoCompleteCustomSource = source;
+                textBox1.AutoCompleteMode= AutoCompleteMode.Suggest;
+            }
         }
 
         //Button RESET
