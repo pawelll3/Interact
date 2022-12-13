@@ -56,12 +56,18 @@ namespace Interact
 
         public string[] GetAutoComplete(char first_letter)
         {
-            var col = db.GetCollection<DrugInterSorted>(Char.ToString(first_letter).ToUpper());
-            var data = col.FindAll().ToList();
             List<string> result = new List<string>();
-            foreach (var item in data)
+            if (Char.IsLetter(first_letter))
             {
-                result.Add(item.drug);
+                var col = db.GetCollection<DrugInterSorted>(Char.ToString(first_letter).ToUpper().Trim());
+                if (col.Count() != 0)
+                {
+                    var data = col.FindAll().ToList();
+                    foreach (var item in data)
+                    {
+                        result.Add(item.drug);
+                    }
+                }
             }
             return result.ToArray();
         }
