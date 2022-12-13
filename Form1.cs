@@ -102,6 +102,13 @@ namespace Interact
                     add_drug_clicked = 1;
                     MessageBox.Show("Please enter correct drug name");
                 }
+                else if (drugA.Trim() == textBox1.Text.Trim())
+                {
+                    add_drug_clicked = 0;
+                    MessageBox.Show("Please enter two different drugs");
+                    drugA = null;
+                    label1.Visible= false;
+                }
                 else
                 {
                     drugB = textBox1.Text;
