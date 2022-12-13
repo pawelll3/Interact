@@ -203,7 +203,8 @@ namespace Interact
         //Button MORE INFO
         private void button3_Click(object sender, EventArgs e)
         {
-
+            WebScrape find_inter = new WebScrape();
+            find_inter.Interaction(drugA, drugB);
         }
 
 
