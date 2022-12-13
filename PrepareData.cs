@@ -19,7 +19,9 @@ namespace Interact
 
         public void Raw2Merged()
         {
-            string[] paths = { @"A.csv", @"B.csv", @"D.csv", @"H.csv", @"L.csv", @"P.csv", @"R.csv", @"V.csv" };
+            string[] paths = { @"ddinter_downloads_code_A.csv", @"ddinter_downloads_code_B.csv", @"ddinter_downloads_code_D.csv",
+                @"ddinter_downloads_code_H.csv", @"ddinter_downloads_code_L.csv", @"ddinter_downloads_code_P.csv",
+                @"ddinter_downloads_code_R.csv", @"ddinter_downloads_code_V.csv" };
 
             List<String> drugA = new List<String>();
             List<String> drugB = new List<String>();
