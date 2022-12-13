@@ -204,7 +204,14 @@ namespace Interact
         private void button3_Click(object sender, EventArgs e)
         {
             WebScrape find_inter = new WebScrape();
-            find_inter.Interaction(drugA, drugB);
+            List<string> more_info = find_inter.Interaction(drugA, drugB);
+            if (more_info.Count != 0)
+            {
+                this.Size = new System.Drawing.Size(446, 538);
+                richTextBox1.Text= more_info[0];
+                richTextBox2.Text= more_info[1];
+            }
+            
         }
 
 

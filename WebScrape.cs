@@ -21,51 +21,61 @@ namespace Interact
     {
         string url = "http://ddinter.scbdd.com/inter-checker/";
 
-        public void Interaction(string drugA, string drugB)
+        public List<string> Interaction(string drugA, string drugB)
         {
-            EdgeOptions options = new EdgeOptions();
-            var service = EdgeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            service.HideCommandPromptWindow= true;
-            service.SuppressInitialDiagnosticInformation= true;
-            options.AddArgument("headless");
-            options.AddArgument("--silent");
-            options.AddArgument("log-level=3");
+            List<string> result = new List<string>();
 
-            var driver = new EdgeDriver(service, options);
-            driver.Manage().Window.Minimize();
-            driver.Navigate().GoToUrl(url);
-
-            string searchBar_id = "awesome-input";
-            string listItem_class = "collection-item";
-            string resultInter_class = "result-interaction-item";
-            string resultManagement_class = "result-management-item";
-
-            foreach(char item in drugA)
+            try
             {
-                driver.FindElement(By.Id(searchBar_id)).SendKeys(Char.ToString(item));
-            }
-            driver.FindElement(By.Id(searchBar_id)).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.ClassName(listItem_class)).Click();
+                EdgeOptions options = new EdgeOptions();
+                var service = EdgeDriverService.CreateDefaultService(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                service.HideCommandPromptWindow = true;
+                service.SuppressInitialDiagnosticInformation = true;
+                options.AddArgument("headless");
+                options.AddArgument("--silent");
+                options.AddArgument("log-level=3");
 
-            foreach (char item in drugB)
+                var driver = new EdgeDriver(service, options);
+                driver.Manage().Window.Minimize();
+                driver.Navigate().GoToUrl(url);
+
+                string searchBar_id = "awesome-input";
+                string listItem_class = "collection-item";
+                string resultInter_class = "result-interaction-item";
+                string resultManagement_class = "result-management-item";
+
+                foreach (char item in drugA)
+                {
+                    driver.FindElement(By.Id(searchBar_id)).SendKeys(Char.ToString(item));
+                }
+                driver.FindElement(By.Id(searchBar_id)).Click();
+                Thread.Sleep(2000);
+                driver.FindElement(By.ClassName(listItem_class)).Click();
+
+                foreach (char item in drugB)
+                {
+                    driver.FindElement(By.Id(searchBar_id)).SendKeys(Char.ToString(item));
+                }
+                driver.FindElement(By.Id(searchBar_id)).Click();
+                Thread.Sleep(2000);
+                driver.FindElement(By.ClassName(listItem_class)).Click();
+
+                Thread.Sleep(500);
+                driver.FindElement(By.Id("get_interactions")).Click();
+
+                Thread.Sleep(1000);
+                string interaction = driver.FindElement(By.ClassName(resultInter_class)).Text;
+                string management = driver.FindElement(By.ClassName(resultManagement_class)).Text;
+                driver.Close();
+                result.Add(interaction);
+                result.Add(management);
+            }
+            catch (Exception)
             {
-                driver.FindElement(By.Id(searchBar_id)).SendKeys(Char.ToString(item));
+                MessageBox.Show("Unexpected error occured, check your connection with internet!");
             }
-            driver.FindElement(By.Id(searchBar_id)).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.ClassName(listItem_class)).Click();
 
-            Thread.Sleep(500);
-            driver.FindElement(By.Id("get_interactions")).Click();
-
-            Thread.Sleep(1000);
-            string interaction = driver.FindElement(By.ClassName(resultInter_class)).Text;
-            string management = driver.FindElement(By.ClassName(resultManagement_class)).Text;
-            driver.Close();
-
-            int o = 0;
-
+            return result;
         }
     }
 }
