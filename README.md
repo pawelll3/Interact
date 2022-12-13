@@ -1,6 +1,6 @@
 # Interact
-The project is a simple software for accesing database based on DDInter files (http://ddinter.scbdd.com/download/)<br />
-with simple web-scraping capabilities to get more accurate results and risk management (http://ddinter.scbdd.com/inter-checker/)
+This project is a simple software for accesing database based on DDInter files (http://ddinter.scbdd.com/download/)<br />
+with simple web-scraping capabilities for getting more accurate results and risk management (http://ddinter.scbdd.com/inter-checker/)
 
 ## Used nugget packages
 - DBLite (https://www.litedb.org/)
